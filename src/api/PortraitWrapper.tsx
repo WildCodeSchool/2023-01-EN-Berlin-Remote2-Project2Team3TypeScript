@@ -9,7 +9,7 @@ interface ApiCharType {
   imageUrl?: string;
 }
 
-type Question = QuestionOption[];
+export type Question = QuestionOption[];
 
 export class ApiChar implements ApiCharType {
   id: number;
