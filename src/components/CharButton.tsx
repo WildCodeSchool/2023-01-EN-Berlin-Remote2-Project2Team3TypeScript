@@ -1,4 +1,14 @@
-const CharButton = ({ name, setGameStage, correct }) => {
+import { GameStage } from "./PortraitGame";
+
+const CharButton = ({
+  name,
+  setGameStage,
+  correct,
+}: {
+  name: string;
+  setGameStage: React.Dispatch<React.SetStateAction<GameStage>>;
+  correct: boolean;
+}) => {
   return (
     <button
       className="char-button"

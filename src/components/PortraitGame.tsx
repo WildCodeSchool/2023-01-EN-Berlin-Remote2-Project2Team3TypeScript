@@ -1,12 +1,17 @@
 import { useRef, useState, useEffect } from "react";
-import getData, { digestTheData } from "../api/PortraitWrapper";
+import getData, { digestTheData, ApiChar, Question as QuestionType } from "../api/PortraitWrapper";
 import Question from "./Question";
 
+export interface GameStage {
+  question : number;
+  points : number;
+}
+
 const PortraitGame = () => {
-  const database = useRef([]);
+  const database : React.MutableRefObject<ApiChar[]> = useRef([]);
   const [gameStage, setGameStage] = useState({ question: 0, points: 0 }); //gameStage is an object with 2 properties, each holding a numeric value
-  const [data, setData] = useState([
-    [{ id: 1, fullName: "The database is loading", isCorrect: true }],
+  const [data, setData] = useState<QuestionType[]>([
+    [{ id: 1, fullName: "The database is loading", imageUrl: '', isCorrect: true }],
     [],
     [],
     [],

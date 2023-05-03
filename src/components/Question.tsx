@@ -1,6 +1,14 @@
 import CharButton from "./CharButton.js";
+import { Question as QuestionType } from "../api/PortraitWrapper.js";
+import { GameStage } from "./PortraitGame.js";
 
-const Question = ({ data, setGameStage }) => {
+const Question = ({
+  data,
+  setGameStage,
+}: {
+  data: QuestionType;
+  setGameStage: React.Dispatch<React.SetStateAction<GameStage>>;
+}) => {
   const answer = data.filter((character) => character.isCorrect)[0];
   return (
     <div className="question">

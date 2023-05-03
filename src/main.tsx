@@ -2,4 +2,10 @@ import ReactDOM from "react-dom/client";
 import App from "./components/App";
 import "./global.css"
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+const rootElement = document.getElementById("root");
+
+if(rootElement === null)  {
+    throw Error ('no root element in index.html!');
+} else {
+    ReactDOM.createRoot(rootElement).render(<App />);
+}
